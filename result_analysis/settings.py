@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import pymysql
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -74,13 +76,12 @@ WSGI_APPLICATION = 'result_analysis.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'result_analysis',
-        'USER': 'root',
-        'PASSWORD': '',  
+        'NAME': 'result_analysis',  # Replace with your database name
+        'USER': 'root',  # Replace with your MySQL username
+        'PASSWORD': '',  # Replace with your MySQL password
         'HOST': 'localhost',
         'PORT': '3306',
     }
